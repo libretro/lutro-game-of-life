@@ -33,7 +33,7 @@ end
 function World:draw()
 	for i=0,self:getNbColumn() do
 		for j=0,self:getNbLine() do
-			lutro.graphics.rectangle(i*2,j*2,1,1, self.grid[i][j]:getColor())
+			lutro.graphics.rectangle(i*6,j*6,5,5, self.grid[i][j]:getColor())
 		end
 	end
 end

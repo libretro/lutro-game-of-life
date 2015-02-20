@@ -8,16 +8,15 @@ require "DeadCell"
 
 
 function lutro.conf(t)
-	t.width  = 200
-	t.height = 200
+	t.width  = 600
+	t.height = 600
 end
 
 function lutro.load()
 	points = {}
-	points[0]= Point.new(1,1)
-	points[1]= Point.new(2,2)
-	points[2]= Point.new(3,3)
-
+	for i=0,math.random(50,100) do
+	 	points[i]= Point.new(math.random(40,60),math.random(40,60))
+	end 
 	w1 = World.new()
 	w1:init(points)
 end

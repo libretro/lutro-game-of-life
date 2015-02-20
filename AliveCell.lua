@@ -7,5 +7,5 @@ function AliveCell.new(n)
 end
 
 function AliveCell:getColor()
-	return 0xfff2b0a4
+	return 0xff660066
 end

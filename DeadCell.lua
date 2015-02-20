@@ -7,5 +7,5 @@ function DeadCell.new(n)
 end
 
 function DeadCell:getColor()
-	return 0xff9d8c84
+	return 0xff333333
 end

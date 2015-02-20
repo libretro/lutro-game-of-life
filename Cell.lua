@@ -7,6 +7,6 @@ function Cell.new(n)
 end
 
 function Cell:getColor()
-	return 0xffd2e2d8
+	return 0xffCCCCCC
 end
 
