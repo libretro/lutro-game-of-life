@@ -31,26 +31,18 @@ function World:init(cells)
 	end
 end
 
-function World:getNbColumn()
-	return #self.grid
-end
-
-function World:getNbLine()
-	return #self.grid[1]
-end
-
 function World:draw()
-	for i=0,self:getNbColumn() do
-		for j=0,self:getNbLine() do
+	for i=0,self.lines-1 do
+		for j=0,self.columns-1 do
 			lutro.graphics.rectangle(i*6,j*6,5,5, self.grid[i][j]:getColor())
 		end
 	end
 end
 
 function World:neighborhood()
-	for i=0,99 do
-		for j=0,99 do
-			self.neighbours[i][j] = neighbours(i,j)
+	for i=0,self.lines-1 do
+		for j=0,self.columns-1 do
+			self.neighbours[i][j] = self:neighbours(i,j)
 		end
 	end	
 end
@@ -65,9 +57,20 @@ function World:neighbour(line, column)
 				and i<self.lines 
 				and j<self.columns
 			then
-				neighbour=neighbour+1
+				if self.grid[i][j]:getColor()== 0xff660066
+					neighbour=neighbour+1
+				end
 			end
 		end
 	end	
 	return neighbour
+end
+
+function World:nextGeneration()
+	self:neighborhood()
+	for i=0,self.lines-1 do
+		for j=0,self.columns-1 do
+			self.grid[i][j] = self.grid[i][j]:nextGeneration(self.neighbours[i][j])
+		end
+	end	
 end
