@@ -42,7 +42,7 @@ end
 function World:neighborhood()
 	for i=0,self.lines-1 do
 		for j=0,self.columns-1 do
-			self.neighbours[i][j] = self:neighbours(i,j)
+			self.neighbours[i][j] = self:neighbour(i,j)
 		end
 	end	
 end
@@ -57,7 +57,7 @@ function World:neighbour(line, column)
 				and i<self.lines 
 				and j<self.columns
 			then
-				if self.grid[i][j]:getColor()== 0xff660066
+				if self.grid[i][j]:getColor()== 0xff660066 then
 					neighbour=neighbour+1
 				end
 			end

@@ -23,7 +23,7 @@ function lutro.load()
 end
 
 function lutro.update(dt)
-
+	w1:nextGeneration()
 end
 
 function lutro.draw()

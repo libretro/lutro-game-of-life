@@ -9,3 +9,12 @@ end
 function AliveCell:getColor()
 	return 0xff660066
 end
+
+function AliveCell:nextGeneration(neighbour)
+	if neighbour==2 or neighbour==3 then
+		cell=self
+	else
+		cell = DeadCell.new()
+	end
+	return cell
+end

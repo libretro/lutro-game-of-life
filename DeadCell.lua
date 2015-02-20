@@ -7,5 +7,14 @@ function DeadCell.new(n)
 end
 
 function DeadCell:getColor()
-	return 0xff333333
+	return 0xff999999
+end
+
+function DeadCell:nextGeneration(neighbour)
+	if neighbour==3 then
+		cell=AliveCell.new()
+	else
+		cell = self
+	end
+	return cell
 end
