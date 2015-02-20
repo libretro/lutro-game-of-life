@@ -1,9 +1,10 @@
 require "Cell"
 
+
 World = {}
 World.__index = World
 
-function World.new(n)
+function World.new()
 	local self = setmetatable({}, World)
 	self.grid = {}
 	for i=0,99 do
@@ -12,9 +13,13 @@ function World.new(n)
 			self.grid[i][j] = Cell.new()
 		end
 	end
-	self.grid[10][10] = AliveCell.new()
-	self.grid[20][10] = DeadCell.new()
 	return self
+end
+
+function World:init(cells)
+	for i=0,#cells do
+		self.grid[cells[i]:getx()][cells[i]:gety()] = AliveCell.new()
+	end
 end
 
 function World:getNbColumn()
@@ -26,8 +31,8 @@ function World:getNbLine()
 end
 
 function World:draw()
-	for i=1,self:getNbColumn() do
-		for j=1,self:getNbLine() do
+	for i=0,self:getNbColumn() do
+		for j=0,self:getNbLine() do
 			lutro.graphics.rectangle(i*2,j*2,1,1, self.grid[i][j]:getColor())
 		end
 	end
