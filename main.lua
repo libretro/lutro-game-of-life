@@ -23,7 +23,15 @@ function lutro.load()
 end
 
 function lutro.update(dt)
+	local JOY_A = lutro.input.joypad(lutro.input.JOY_A)
 	w1:nextGeneration()
+	if JOY_A == 1 then
+		for i=0,math.random(50,100) do
+		 	points[i]= Point.new(math.random(40,60),math.random(40,60))
+		end 
+		w1 = World.new()
+		w1:init(points)		
+	end
 end
 
 function lutro.draw()
