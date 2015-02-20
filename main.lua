@@ -14,6 +14,7 @@ end
 
 function lutro.load()
 	points = {}
+	math.randomseed( os.time() )
 	for i=0,math.random(50,100) do
 	 	points[i]= Point.new(math.random(40,60),math.random(40,60))
 	end 
