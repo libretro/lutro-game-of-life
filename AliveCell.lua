@@ -3,7 +3,6 @@ AliveCell.__index = AliveCell
 
 function AliveCell.new(n)
 	local self = setmetatable({}, AliveCell)
-	self.type = "AliveCell"
 	return self
 end
 

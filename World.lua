@@ -58,7 +58,7 @@ function World:neighbour(line, column)
 				and i<self.lines 
 				and j<self.columns
 			then
-				if self.grid[i][j].type == "AliveCell" then
+				if self.grid[i][j].__index == AliveCell then
 					neighbour=neighbour+1
 				end
 			end

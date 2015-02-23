@@ -3,7 +3,6 @@ Cell.__index = Cell
 
 function Cell.new(n)
 	local self = setmetatable({}, Cell)
-	self.type = "Cell"
 	return self
 end
 
