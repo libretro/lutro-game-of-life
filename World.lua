@@ -34,7 +34,8 @@ end
 function World:draw()
 	for i=0,self.lines-1 do
 		for j=0,self.columns-1 do
-			lutro.graphics.rectangle(i*6,j*6,5,5, self.grid[i][j]:getColor())
+			lutro.graphics.setColor(self.grid[i][j]:getColor())
+			lutro.graphics.rectangle(i*6,j*6,5,5)
 		end
 	end
 end
@@ -57,7 +58,7 @@ function World:neighbour(line, column)
 				and i<self.lines 
 				and j<self.columns
 			then
-				if self.grid[i][j]:getColor()== 0xff660066 then
+				if self.grid[i][j].type == "AliveCell" then
 					neighbour=neighbour+1
 				end
 			end
