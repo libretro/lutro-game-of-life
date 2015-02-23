@@ -3,11 +3,12 @@ Cell.__index = Cell
 
 function Cell.new(n)
 	local self = setmetatable({}, Cell)
+	self.type = "Cell"
 	return self
 end
 
 function Cell:getColor()
-	return 0xffCCCCCC
+	return 204, 204, 204
 end
 
 function Cell:nextGeneration(neighbour)

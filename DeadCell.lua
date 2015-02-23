@@ -3,11 +3,12 @@ DeadCell.__index = DeadCell
 
 function DeadCell.new(n)
 	local self = setmetatable({}, DeadCell)
+	self.type = "DeadCell"
 	return self
 end
 
 function DeadCell:getColor()
-	return 0xff999999
+	return 153, 153, 153
 end
 
 function DeadCell:nextGeneration(neighbour)

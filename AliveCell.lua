@@ -3,11 +3,12 @@ AliveCell.__index = AliveCell
 
 function AliveCell.new(n)
 	local self = setmetatable({}, AliveCell)
+	self.type = "AliveCell"
 	return self
 end
 
 function AliveCell:getColor()
-	return 0xff660066
+	return 102, 0, 102
 end
 
 function AliveCell:nextGeneration(neighbour)
