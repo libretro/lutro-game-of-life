@@ -35,7 +35,7 @@ function World:draw()
 	for i=0,self.lines-1 do
 		for j=0,self.columns-1 do
 			lutro.graphics.setColor(self.grid[i][j]:getColor())
-			lutro.graphics.rectangle(i*6,j*6,5,5)
+			lutro.graphics.rectangle("fill",i*6,j*6,5,5)
 		end
 	end
 end
@@ -49,7 +49,7 @@ function World:neighborhood()
 end
 
 function World:neighbour(line, column)
-	neighbour = 0;
+	neighbour = 0
 	for i=line-1,line+1 do
 		for j=column-1,column+1 do
 			if (i~=line or j~=column) 
