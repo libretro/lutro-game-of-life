@@ -23,7 +23,7 @@ function lutro.load()
 end
 
 function lutro.update(dt)
-	local JOY_A = lutro.input.joypad(lutro.input.JOY_A)
+	local JOY_A = lutro.input.joypad("a")
 	w1:nextGeneration()
 	if JOY_A == 1 then
 		for i=0,math.random(50,100) do
